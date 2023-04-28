@@ -50,19 +50,20 @@ jobs:
         npm run test --if-present
         echo "$GITHUB_SHA" > sha.txt
         popd
+        ls -la
 
 #     - name: 'Login via Azure CLI'
 #       uses: azure/login@v1
 #       with:
 #         creds: ${{ secrets.RBAC_GAE_FA_NODE16_LCON }}
 
-    - name: 'Deploy to Azure Functions'
-      uses: Azure/functions-action@v1
-      id: deploy-to-function
-      with:
-        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-        publish-profile: ${{ secrets.AZURE_FUN_APP_PUBLISH_PROFILE }}
+#     - name: 'Deploy to Azure Functions'
+#       uses: Azure/functions-action@v1
+#       id: deploy-to-function
+#       with:
+#         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+#         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+#         publish-profile: ${{ secrets.AZURE_FUN_APP_PUBLISH_PROFILE }}
 
 #     - name: E2E Check HttpTrigger Result
 #       shell: pwsh
