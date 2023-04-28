@@ -50,7 +50,8 @@ jobs:
         npm run test --if-present
         echo "$GITHUB_SHA" > sha.txt
         popd
-        ls -la
+        cd ~/work/functions-action/functions-action/tests
+        zip release.zip ~/work/functions-action/functions-action/tests/* -r
 
 #     - name: 'Login via Azure CLI'
 #       uses: azure/login@v1
