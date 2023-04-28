@@ -54,6 +54,7 @@ jobs:
         pwd
         cd ./tests/e2e/node16/
         ls -la
+        cat sha.txt
 
 #     - name: 'Login via Azure CLI'
 #       uses: azure/login@v1
